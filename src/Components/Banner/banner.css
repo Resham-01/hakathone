@@ -1,0 +1,130 @@
+/* General Styling */
+.slider {
+  z-index: 99;
+  position: relative;
+}
+
+.slider .carousel {
+  position: relative;
+}
+
+.slider .carousel .carousel-item img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+.slider .carousel .carousel-caption {
+  z-index: 9;
+  bottom: 30%;
+  text-align: center;
+}
+
+.slider .carousel .carousel-caption h5 {
+  font-size: 3rem;
+  color: var(--white);
+  line-height: 1.4;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.slider .carousel .carousel-caption h5 span {
+  display: block;
+  color: #ffd700; /* Highlighted color for span */
+}
+
+.slider .carousel .carousel-caption .slider_des p {
+  font-size: 1.2rem;
+  color: var(--white);
+  line-height: 1.5;
+  font-weight: 500;
+  margin-top: 20px;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+/* Dark Overlay */
+.slider .carousel::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Navigation Buttons */
+.slider .carousel .carousel-control-prev,
+.slider .carousel .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  top: 45%;
+}
+
+.slider .carousel .carousel-control-prev:hover,
+.slider .carousel .carousel-control-next:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+@media only screen and (max-width: 991px) {
+  .slider .carousel .carousel-caption {
+    bottom: 20%;
+  }
+
+  .slider .carousel .carousel-caption h5 {
+    font-size: 2rem;
+  }
+
+  .slider .carousel .carousel-caption .slider_des p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .slider .carousel .carousel-item img {
+    height: 60vh;
+    object-fit: cover;
+  }
+
+  .slider .carousel .carousel-caption {
+    bottom: 15%;
+  }
+
+  .slider .carousel .carousel-caption h5 {
+    font-size: 1.8rem;
+  }
+
+  .slider .carousel .carousel-caption .slider_des p {
+    font-size: 0.9rem;
+  }
+}
