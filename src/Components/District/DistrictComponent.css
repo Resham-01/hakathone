@@ -3,32 +3,8 @@
     padding: 0;
 }
 
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.5); /* Transparent black background */
-}
-
-.navbar-nav .nav-link {
-    font-weight: normal; /* Default font weight */
-    transition: color 0.3s ease, font-weight 0.3s ease; /* Smooth transition for color and font weight */
-    color: black !important;
-}
-
-.navbar-nav .nav-link:hover {
-    font-weight: bold; /* Make text bold on hover */
-    color: #000000; /* Change color to dark black on hover */
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
 /* Header Section */
 header {
-    background: url('image/surkhet-airport_t2JGbkJIty.webp') center/cover no-repeat;
     min-height: 60vh;
 }
 
@@ -140,9 +116,4 @@ header {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Footer Section */
-footer {
-    background: #ffffff;
 }

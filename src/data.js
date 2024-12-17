@@ -1,0 +1,43 @@
+// src/data.js
+export const flightData = [
+    {
+        id: 1,
+        from: "Kathmandu",
+        to: "Surkhet",
+        flightNumber: "KT123",
+        departureTime: "08:00 AM",
+        arrivalTime: "09:30 AM",
+        duration: "1h 30m",
+        price: 120,
+    },
+    {
+        id: 2,
+        from: "Pokhara",
+        to: "Surkhet",
+        flightNumber: "PK456",
+        departureTime: "10:00 AM",
+        arrivalTime: "11:45 AM",
+        duration: "1h 45m",
+        price: 110,
+    },
+    {
+        id: 3,
+        from: "Biratnagar",
+        to: "Surkhet",
+        flightNumber: "BN789",
+        departureTime: "02:00 PM",
+        arrivalTime: "03:50 PM",
+        duration: "1h 50m",
+        price: 130,
+    },
+    {
+        id: 4,
+        from: "Nepalgunj",
+        to: "Surkhet",
+        flightNumber: "NJ101",
+        departureTime: "06:00 PM",
+        arrivalTime: "06:45 PM",
+        duration: "45m",
+        price: 90,
+    },
+];

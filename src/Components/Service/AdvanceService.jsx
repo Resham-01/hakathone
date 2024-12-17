@@ -18,6 +18,7 @@ const ServiceCard = ({ iconClass, title, description, colorClass, path }) => {
                     </div>
                     <h5 className="fs-5 fw-bold mb-2">{title}</h5>
                     <p className="text-muted">{description}</p>
+                    <i className="fs-2 text-dark bi bi-arrow-right-circle"></i>
                 </div>
             </Link>
         </div>
@@ -43,10 +44,10 @@ const ServicePage = () => {
             <Header />
 
             {/* Service Section */}
-            <section className="py-5 bg-light">
-                <div className="container text-center mt-4">
-                    <h2 className="fs-2 fw-bold mb-4 fade-in">Our Services</h2>
-                    <div className="row">
+            <section className="service-container py-5 bg-light">
+                <div className="container text-center">
+                    <h2 className="fs-2 fw-bold mt-4">Our Services</h2>
+                    <div className="row mt-4">
                         <ServiceCard
                             iconClass="bi-person-fill"
                             colorClass="text-primary"

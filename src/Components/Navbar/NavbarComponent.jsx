@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import gsap from 'gsap'; // GSAP for animations
+import gsap from 'gsap';
 import { Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap is imported
-import "./NavbarComponent.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./NavbarComponent.css";
 
 const Header = () => {
     const [showLoginModal, setShowLoginModal] = useState(false);
@@ -20,13 +20,7 @@ const Header = () => {
             { opacity: 0, y: -50 },
             { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
         );
-        gsap.fromTo(
-            ".navbar-nav .nav-item",
-            { opacity: 0, x: -30 },
-            { opacity: 1, x: 0, stagger: 0.1, duration: 1, ease: 'power3.out' }
-        );
 
-        // Animate Login and SignUp buttons
         gsap.fromTo(
             loginButtonRef.current,
             { opacity: 0, scale: 0.8 },
@@ -39,8 +33,13 @@ const Header = () => {
             { opacity: 1, scale: 1, duration: 0.5, delay: 1, ease: 'power3.out' }
         );
 
+        // Animate Modals when they open
+        if (showLoginModal || showSignupModal) {
+            document.body.classList.add('modal-open');
+        } else {
+            document.body.classList.remove('modal-open');
+        }
 
-        // Animate Login Modal when it opens
         if (showLoginModal) {
             gsap.fromTo(
                 loginModalRef.current,
@@ -49,7 +48,6 @@ const Header = () => {
             );
         }
 
-        // Animate SignUp Modal when it opens
         if (showSignupModal) {
             gsap.fromTo(
                 signupModalRef.current,
@@ -57,6 +55,7 @@ const Header = () => {
                 { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: 'power3.out' }
             );
         }
+
     }, [showLoginModal, showSignupModal]);
 
     const handleLoginClick = () => setShowLoginModal(true);
@@ -82,50 +81,52 @@ const Header = () => {
 
     return (
         <div id="home" className="home-container">
-            {/* Navbar Section */}
-            <nav className="navbar bg-primary bg-gradient navbar-expand-lg fixed-top">
-                <div className="container">
-                    <Link className="navbar-brand" to="/">KARNALI</Link>
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav ms-auto">
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">Home</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/accomodation">Accommodation</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/service">Services</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/contact">Contact</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="#" ref={loginButtonRef} onClick={handleLoginClick}>
-                                    <i className="bi bi-person-circle"></i> Login
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="#" ref={signupButtonRef} onClick={handleSignupClick}>
-                                    <i className="bi bi-person-plus-fill"></i> Sign Up
-                                </Link>
-                            </li>
-                        </ul>
+            {/* Main content area */}
+            <div className="main-content">
+                {/* Navbar Section */}
+                <nav className="navbar navbar-expand-lg fixed-top p-4">
+                    <div className="container">
+                        <Link className="fw-bold fs-4 navbar-brand" to="/card">KARNALI</Link>
+                        <button
+                            className="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav"
+                            aria-controls="navbarNav"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav ms-auto">
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/">Home</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/accomodation">Accommodation</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/service">Services</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/contact">Contact</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="#" ref={loginButtonRef} onClick={handleLoginClick}>
+                                        <i className="bi bi-person-circle"></i> Login
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="#" ref={signupButtonRef} onClick={handleSignupClick}>
+                                        <i className="bi bi-person-plus-fill"></i> Sign Up
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
-
+                </nav>
+            </div>
 
             {/* Login Modal */}
             {showLoginModal && (
@@ -192,9 +193,13 @@ const Header = () => {
                                         <label htmlFor="signupPassword" className="form-label">Password</label>
                                         <input type="password" className="form-control" id="signupPassword" placeholder="Create a password" />
                                     </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="signupConfirmPassword" className="form-label">Confirm Password</label>
+                                        <input type="password" className="form-control" id="signupConfirmPassword" placeholder="Confirm your password" />
+                                    </div>
                                     <button type="submit" className="btn btn-primary w-100">Sign Up</button>
                                     <div className="mt-3 text-center">
-                                        <p>Already have an account? <a href="#" onClick={() => { setShowSignupModal(false); setShowLoginModal(true); }}>Login</a></p>
+                                        <p>Already have an account? <a href="#" onClick={() => { setShowSignupModal(false); setShowLoginModal(true); }}>LogIn</a></p>
                                     </div>
                                 </form>
                             </div>
@@ -202,8 +207,6 @@ const Header = () => {
                     </div>
                 </div>
             )}
-
-
         </div>
     );
 };

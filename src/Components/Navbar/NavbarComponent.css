@@ -1,3 +1,77 @@
 .navbar {
-    background-color: rgb(88, 23, 227);
+    position: sticky;
+    top: 0;
+    margin: auto;
+    z-index: 1000;
+    background: #e1e6e3;
 }
+
+.navbar-nav .nav-link {
+    font-weight: normal;
+    /* Default font weight */
+    transition: all 3s ease-in-out;
+    /* Smooth transition for color and font weight */
+    color: black;
+}
+
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #000000; 
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+    /* Space for the underline */
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+/* Create the underline effect using ::after */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #37d151;
+    transition: width 0.6s ease;
+}
+
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+/* Apply blur effect to everything when the modal is open */
+body.modal-open .main-content  {
+    filter: blur(2px); /* Adjust the blur amount as needed */
+    transition: filter 0.3s ease-in-out;
+}
+
+/* Ensure the modal is clear and above the blurred content */
+.modal {
+    z-index: 10; /* Ensure modal is above the blurred content */
+}
+
+/* Optional: Style the modal backdrop */
+.modal-backdrop.show {
+    opacity: 0.5;
+    background-color: #000;
+}
+

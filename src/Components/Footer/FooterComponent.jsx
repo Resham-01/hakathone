@@ -1,83 +1,71 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => (
   <>
-    <footer className="bg-light text-white py-5">
-      <div className="container">
+    {/* Main Footer */}
+    <footer className="py-5" style={{ background: 'linear-gradient(135deg, #2c2c2c, #1f1f1f)' }}>
+      <div className="container text-light">
         <div className="row">
-          {/* First Section: Navigation Links */}
-          <div className="col-12 col-md-4 mb-3">
-            <h5 className="text-uppercase text-dark my-3" style={{ fontFamily: "'Roboto', sans-serif", letterSpacing: '1px' }}>Quick Links</h5>
-            <ul className="nav flex-column">
-              <li className="nav-item mb-3">
-                <a href="#" className="nav-link p-0 text-muted">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item mb-3">
-                <a href="#" className="nav-link p-0 text-muted">
-                  Features
-                </a>
-              </li>
-              <li className="nav-item mb-3">
-                <a href="#" className="nav-link p-0 text-muted">
-                  Pricing
-                </a>
-              </li>
-              <li className="nav-item mb-3">
-                <a href="#" className="nav-link p-0 text-muted">
-                  About
-                </a>
-              </li>
+          {/* Quick Links Section */}
+          <div className="col-12 col-md-4 mb-4">
+            <h5 className="mb-4" style={{ letterSpacing: '1px', color: '#ffcc00' }}>Quick Links</h5>
+            <ul className="list-unstyled">
+              {['Home', 'Features', 'Pricing', 'About'].map((link, index) => (
+                <li key={index} className="mb-2">
+                  <a href="#" className="text-light text-decoration-none" style={{ transition: 'color 0.3s' }}>
+                    {link}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Second Section: Contact Info */}
-          <div className="col-12 col-md-4 mb-3">
-            <h5 className="text-uppercase text-dark my-3" style={{ fontFamily: "'Roboto', sans-serif", letterSpacing: '1px' }}>Contact Us</h5>
-            <p className="text-muted mb-3">
-              Explore Karnali, Street Address, City, Country
+          {/* Contact Us Section */}
+          <div className="col-12 col-md-4 mb-4">
+            <h5 className="mb-4" style={{ letterSpacing: '1px', color: '#ffcc00' }}>Contact Us</h5>
+            <p style={{ fontSize: '14px', color: '#ccc' }}>
+              <strong>Address:</strong> Explore Karnali, Street 123, City, Country
             </p>
-            <p className="text-muted mb-3">
+            <p style={{ fontSize: '14px', color: '#ccc' }}>
               <strong>Email:</strong> contact@karnali.com
             </p>
-            <p className="text-muted mb-3">
+            <p style={{ fontSize: '14px', color: '#ccc' }}>
               <strong>Phone:</strong> +123 456 7890
             </p>
           </div>
 
-          {/* Third Section: Newsletter Signup */}
-          <div className="col-12 col-md-4 mb-3">
-            <form>
-              <h5 className="text-uppercase text-dark my-3" style={{ fontFamily: "'Roboto', sans-serif", letterSpacing: '1px' }}>Subscribe to our newsletter</h5>
-              <p className="text-muted mb-3">Get the latest updates and travel tips.</p>
-              <div className="d-flex flex-column flex-sm-row w-100 gap-2">
-                <input
-                  id="newsletter1"
-                  type="email"
-                  className="form-control"
-                  placeholder="Your email address"
-                  aria-label="Email address"
-                  required
-                />
-                <button className="btn btn-primary" type="submit">
-                  Subscribe
-                </button>
-              </div>
+          {/* Newsletter Section */}
+          <div className="col-12 col-md-4 mb-4">
+            <h5 className="mb-4" style={{ letterSpacing: '1px', color: '#ffcc00' }}>Newsletter</h5>
+            <p style={{ color: '#ccc' }}>Subscribe to our newsletter for travel updates.</p>
+            <form className="d-flex">
+              <input
+                type="email"
+                className="form-control me-2"
+                placeholder="Enter your email"
+                aria-label="Email"
+                required
+              />
+              <button className="btn btn-warning text-dark" type="submit" style={{ fontWeight: 'bold' }}>
+                Subscribe
+              </button>
             </form>
           </div>
         </div>
       </div>
     </footer>
 
-    {/* Footer copyright section with improved styling */}
-    <footer
-      className="text-white text-center py-3"
-      style={{ backgroundColor: '#222' }}
+    {/* Bottom Footer */}
+    <div
+      className="text-center py-3"
+      style={{ backgroundColor: '#181818', color: '#fff', fontSize: '14px' }}
     >
-      <p>&copy; 2024 <span style={{ fontWeight: 'bold', color: '#ffcc00' }}>Explore Karnali</span>. All Rights Reserved.</p>
-    </footer>
+      <p className="mb-0 text-light">
+        &copy; {new Date().getFullYear()} <span style={{ color: '#ffcc00', fontWeight: 'bold' }}>Explore Karnali</span>.
+        All Rights Reserved.
+      </p>
+    </div>
   </>
 );
 

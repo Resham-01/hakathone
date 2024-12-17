@@ -1,98 +1,55 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { gsap } from "gsap";
 import "./contactComponent.css";
-import Footer from "../Footer/FooterComponent";
 import Header from "../Navbar/NavbarComponent";
+import Footer from "../Footer/FooterComponent";
 
 const ContactUs = () => {
     useEffect(() => {
-        // GSAP Animation on Page Load
-        gsap.from("#contact h2", { y: -50, duration: 1, ease: "power3.out" });
-        gsap.from("#contact form .mb-3", {
-            x: -50,
-            duration: 1,
-            ease: "power3.out",
-            stagger: 0.3, // Stagger animation for form fields
-        });
-        gsap.from("#contact .contact-info", { x: 50, duration: 1, delay: 0.5, ease: "power3.out" });
-        gsap.from("#contact iframe", { scale: 0.9, duration: 1, delay: 0.8, ease: "power3.out" });
+        // GSAP Animation for Section
+        gsap.from(".contact-section h2", { y: -50, duration: 1, ease: "power3.out" });
+        gsap.from(".contact-form", { x: -50, duration: 1, delay: 0.5, ease: "power3.out" });
+        gsap.from(".contact-info", { x: 50, duration: 1, delay: 0.5, ease: "power3.out" });
     }, []);
 
     return (
         <>
             <Header />
-            {/* Contact Section */}
-            <section id="contact" className="py-5">
-                <div className="container">
-                    <h2 className="text-center mb-4">Contact Us</h2>
-                    <div className="row">
+            <section className="contact-section">
+                <div className="contact-title container  ">
+                    <h2 className="mt-4">Contact Us</h2>
+                    <div className="contact-wrapper">
                         {/* Contact Form */}
-                        <div className="col-md-6">
+                        <div className="contact-form col-md-6 bg-transparent bg-gradient">
                             <form>
                                 <div className="mb-3">
-                                    <label htmlFor="name" className="form-label">
-                                        Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        id="name"
-                                        placeholder="Your Name"
-                                    />
+                                    <label htmlFor="name" className="form-label">Name</label>
+                                    <input type="text" className="form-control" id="name" placeholder="Your Name" />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="email" className="form-label">
-                                        Email
-                                    </label>
-                                    <input
-                                        type="email"
-                                        className="form-control"
-                                        id="email"
-                                        placeholder="Your Email"
-                                    />
+                                    <label htmlFor="email" className="form-label">Email</label>
+                                    <input type="email" className="form-control" id="email" placeholder="Your Email" />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="phone" className="form-label">
-                                        Phone
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        id="phone"
-                                        placeholder="Your Phone Number"
-                                    />
+                                    <label htmlFor="phone" className="form-label">Phone</label>
+                                    <input type="text" className="form-control" id="phone" placeholder="Your Phone" />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="message" className="form-label">
-                                        Message
-                                    </label>
-                                    <textarea
-                                        className="form-control"
-                                        id="message"
-                                        rows="4"
-                                        placeholder="Your Message"
-                                    ></textarea>
+                                    <label htmlFor="message" className="form-label">Message</label>
+                                    <textarea className="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
                                 </div>
-                                <button type="submit" className="btn btn-primary btn-animated">
-                                    Send
-                                </button>
+                                <button type="submit" className="btn btn-primary">Send</button>
                             </form>
                         </div>
 
-                        {/* Contact Info and Map */}
-                        <div className="col-md-6 contact-info">
+                        {/* Contact Info */}
+                        <div className="contact-info col-md-6 bg-transparent bg-gradient">
                             <h4>Contact Information</h4>
-                            <p>
-                                <strong>Address:</strong> 1234 Street Name, City, Country
-                            </p>
-                            <p>
-                                <strong>Email:</strong> contact@domain.com
-                            </p>
-                            <p>
-                                <strong>Phone:</strong> +123 456 7890
-                            </p>
+                            <p><strong>Address:</strong> 1234 Street Name, City, Country</p>
+                            <p><strong>Email:</strong> contact@domain.com</p>
+                            <p><strong>Phone:</strong> +123 456 7890</p>
                             <h4>Find Us Here</h4>
                             <div className="ratio ratio-16x9">
                                 <iframe

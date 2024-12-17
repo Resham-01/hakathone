@@ -77,21 +77,6 @@ const Banner = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-
-      {/* Search Form Above the Carousel */}
-      {/* <div className="search-form position-absolute translate-middle" ref={searchFormRef}>
-        <h5>Find Your Next Adventure</h5>
-        <form>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search destinations..."
-          />
-          <button type="submit" className="btn btn-primary">
-            Search
-          </button>
-        </form>
-      </div> */}
     </section>
   );
 };

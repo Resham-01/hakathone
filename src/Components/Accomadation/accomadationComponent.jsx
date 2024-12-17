@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import "./accomadationComponent.css";
 import Footer from "../Footer/FooterComponent";
 import Header from "../Navbar/NavbarComponent";
 
 function Accommodation() {
+
+  const headingRef = useRef(null);
+  const subTextRef = useRef(null);
+  const searchFormRef = useRef(null);
+
+  useEffect(() => {
+    // GSAP Animation for heading and subtext
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }
+    );
+    gsap.fromTo(
+      subTextRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, delay: 0.5, duration: 1.5, ease: "power3.out" }
+    );
+
+    // GSAP Animation for search form
+    gsap.fromTo(
+      searchFormRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, delay: 1.5, duration: 1.5, ease: "power3.out" }
+    );
+  }, []);
+
   return (
 
     <>
@@ -19,8 +46,8 @@ function Accommodation() {
 
         {/* Content Section */}
         <div className="content">
-          <h1>Discover your perfect stay in the heart of Karnali</h1>
-          <p className="himalayas">
+          <h1 ref={headingRef}>Discover your perfect stay in the heart of Karnali</h1>
+          <p className="himalayas" ref={subTextRef}>
             Karnali Province offers cozy homestays and comfortable hotels, perfect for adventurers, families, and those seeking relaxation.
           </p>
         </div>
