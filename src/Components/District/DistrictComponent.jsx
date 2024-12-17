@@ -96,7 +96,7 @@ const DistrictsSection = () => {
       transition={{ duration: 1.5 }} // Fade-in effect for the entire section
     >
       <div className="container">
-        <h2 className="text-center fw-bold mb-4">Districts in Karnali</h2>
+        <h2 className="text-center fs-2 fw-bold mb-4">Districts in Karnali</h2>
         <div className="row">
           {districts.map((district, index) => (
             <DistrictCard

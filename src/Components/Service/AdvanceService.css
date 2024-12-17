@@ -1,0 +1,52 @@
+/* Service Card Styling */
+.service-card {
+    border-radius: 15px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .icon-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(0, 123, 255, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .service-card:hover .icon-container {
+    background-color: rgba(0, 123, 255, 0.2);
+  }
+  
+  .service-card i {
+    font-size: 3rem;
+  }
+  
+  .text-muted {
+    font-size: 0.95rem;
+  }
+  
+  /* GSAP Animation */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn ease 1s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

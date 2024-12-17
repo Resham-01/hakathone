@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Carousel } from "react-bootstrap";
 import gsap from "gsap";
-import sliderImg1 from "../../assets/images/slider/1.png";
-import sliderImg2 from "../../assets/images/slider/2.png";
 import "./banner.css";
 
 const Banner = () => {
@@ -32,11 +30,11 @@ const Banner = () => {
   }, []);
 
   return (
-    <section className="slider">
+    <section className="slider position-relative">
       <Carousel variant="dark">
         {/* Slide 1 */}
         <Carousel.Item>
-          <img src={"/Shey Phoksundo Lake 1.jpg"} className="d-block w-100" alt="First Slide" />
+          <img src={"/Rara.jpg"} className="d-block w-100" alt="First Slide" />
           <Carousel.Caption>
             <div className="slider_des">
               <h5 className="heading" ref={headingRef}>
@@ -51,7 +49,7 @@ const Banner = () => {
 
         {/* Slide 2 */}
         <Carousel.Item>
-          <img src={"/Rara.jpg"} className="d-block w-100" alt="Second Slide" />
+          <img src={"/Shey Phoksundo Lake.webp"} className="d-block w-100" alt="Second Slide" />
           <Carousel.Caption>
             <div className="slider_des">
               <h5 className="heading" ref={headingRef}>
@@ -80,8 +78,8 @@ const Banner = () => {
         </Carousel.Item>
       </Carousel>
 
-      {/* Search Form Below the Carousel */}
-      <div className="search-form" ref={searchFormRef}>
+      {/* Search Form Above the Carousel */}
+      {/* <div className="search-form position-absolute translate-middle" ref={searchFormRef}>
         <h5>Find Your Next Adventure</h5>
         <form>
           <input
@@ -93,7 +91,7 @@ const Banner = () => {
             Search
           </button>
         </form>
-      </div>
+      </div> */}
     </section>
   );
 };
