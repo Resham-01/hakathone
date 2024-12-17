@@ -248,10 +248,6 @@ button.btn-outline-primary:hover, button.btn-outline-secondary:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Text Centering in Form */
-.form-control, .btn {
-    text-align: center;
-}
 
 /* Additional Styling for Payment Methods */
 .payment-method-info p {

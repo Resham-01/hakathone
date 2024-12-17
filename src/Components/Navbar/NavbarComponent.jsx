@@ -86,7 +86,7 @@ const Header = () => {
                 {/* Navbar Section */}
                 <nav className="navbar navbar-expand-lg fixed-top p-4">
                     <div className="container">
-                        <Link className="fw-bold fs-4 navbar-brand" to="/card">KARNALI</Link>
+                        <Link className="fw-bold fs-4 navbar-brand" to="/">KARNALI</Link>
                         <button
                             className="navbar-toggler"
                             type="button"

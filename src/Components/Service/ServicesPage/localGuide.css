@@ -1,0 +1,88 @@
+/* Hero Section with Glassmorphism */
+.local-guides-container {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom, #356a81, #203a43, #2c5364);
+    min-height: 100vh;
+    color: #fff;
+    padding: 5px;
+}
+
+.hero-section {
+    background: url("/images/local-guides-hero.jpg") no-repeat center center/cover;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.hero-content {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content h1 {
+    color: #f7f7f7;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.glass-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.glass-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Features Section */
+.feature-card {
+    border: none;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    overflow: hidden; /* Prevents any content overflow */
+    padding: 1.5rem; /* Consistent padding inside the card */
+    height: 100%; /* Ensures all cards have equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centers all text */
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+    font-weight: bold;
+    color: #203a43;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+
+.feature-card p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+    word-wrap: break-word; /* Wraps long words inside the card */
+}
+
+/* Image Styling */
+.feature-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem; /* Adds space below the image */
+}

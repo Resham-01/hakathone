@@ -13,7 +13,7 @@ const Service = () => {
               <i className="bi bi-person-fill fs-2 mb-3"></i>
               <h5 className='my-2 fw-semibold'>Local Guides</h5>
               <p>Explore Surkhet with our expert local guides who will show you the hidden gems of the valley.</p>
-              <Link to="" className="btn btn-primary mt-3">
+              <Link to="/local_guide" className="btn btn-primary mt-3">
                 Read more...
               </Link>
             </div>
@@ -23,7 +23,7 @@ const Service = () => {
               <i className="bi bi-map-fill fs-2 mb-3"></i>
               <h5 className='my-2 fw-semibold'>Tour Packages</h5>
               <p>Choose from our curated tour packages to make the most of your trip to Surkhet.</p>
-              <Link to="" className="btn btn-primary mt-3">
+              <Link to="/tour_packages" className="btn btn-primary mt-3">
                 Read more...
               </Link>
             </div>

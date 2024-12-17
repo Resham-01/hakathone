@@ -47,18 +47,15 @@ const ContactUs = () => {
                         {/* Contact Info */}
                         <div className="contact-info col-md-6 bg-transparent bg-gradient">
                             <h4>Contact Information</h4>
-                            <p><strong>Address:</strong> 1234 Street Name, City, Country</p>
+                            <p><strong>Address:</strong> Gyaneshwor, Kathmandu - Nepal</p>
                             <p><strong>Email:</strong> contact@domain.com</p>
                             <p><strong>Phone:</strong> +123 456 7890</p>
                             <h4>Find Us Here</h4>
                             <div className="ratio ratio-16x9">
+                                
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434508738!2d144.96305781531542!3d-37.816279979751524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577697edb1b563!2sMelbourne%20CBD%2C%20VIC%2C%20Australia!5e0!3m2!1sen!2snp!4v1687558292113!5m2!1sen!2snp"
-                                    allowFullScreen
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                    title="Google Maps"
-                                ></iframe>
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d643.10445418591!2d85.33088859355917!3d27.706732018203624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190a692fc1c5%3A0xb1c8685679ee4aff!2sMid-Valley%20International%20College!5e0!3m2!1sen!2snp!4v1734463552557!5m2!1sen!2snp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps">
+                                </iframe>
                             </div>
                         </div>
                     </div>

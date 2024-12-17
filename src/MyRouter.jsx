@@ -3,10 +3,15 @@ import { Routes, Route, NavLink } from 'react-router';
 import Home from "./Components/Home/HomeComponents";
 import Accommodation from "./Components/Accomadation/accomadationComponent";
 import ServicePage from "./Components/Service/AdvanceService";
+import LocalGuides from "./Components/Service/ServicesPage/localGuide";
+import TourPackages from "./Components/Service/ServicesPage/tourPackage";
+
 import ContactUs from "./Components/Contact/contactComponent";
 import FlightDetails from "./Components/BookingPage/flightDetails";
 import FlightBookingWrapper from "./Components/BookingPage/FlightBookingWrapper";
-// import LocalGuides from "./Components/Service/ServicesPage/localGuide";
+import HumlaDistrict from "./Components/District/NameOfDistrict/HumlaDistrict";
+import JumlaDistrict from "./Components/District/NameOfDistrict/JumlaDistrict";
+import DolpaDistrict from "./Components/District/NameOfDistrict/DolpaDistrict";
 
 
 const PageNotFound = () => {
@@ -31,11 +36,18 @@ export const MyRoute = () => {
                 <Route index path="/" element={<Home />} />
                 <Route  path="/accomodation" element={<Accommodation />} />
                 <Route  path="/service" element={<ServicePage />} />
-                {/* <Route  path="/service/local_guide" element={<LocalGuides />} /> */}
+                <Route  path="/local_guide" element={<LocalGuides />} />
+                <Route  path="/tour_packages" element={<TourPackages />} />
 
                 <Route  path="/contact" element={<ContactUs />} />
                 <Route  path="/details" element={<FlightDetails />} />
                 <Route  path="/booking_page" element={<FlightBookingWrapper />} />
+
+                <Route  path="/humla" element={<HumlaDistrict />} />
+                <Route  path="/jumla" element={<JumlaDistrict />} />
+                <Route  path="/dolpa" element={<DolpaDistrict />} />
+
+
 
 
                 <Route path="*" element={<PageNotFound />} />
