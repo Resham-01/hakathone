@@ -3,9 +3,9 @@ import gsap from "gsap";
 import "./accomadationComponent.css";
 import Footer from "../Footer/FooterComponent";
 import Header from "../Navbar/NavbarComponent";
+import { Link } from "react-router-dom";
 
 function Accommodation() {
-
   const headingRef = useRef(null);
   const subTextRef = useRef(null);
   const searchFormRef = useRef(null);
@@ -32,7 +32,6 @@ function Accommodation() {
   }, []);
 
   return (
-
     <>
       <div>
         <Header />
@@ -48,7 +47,7 @@ function Accommodation() {
         <div className="content">
           <h1 ref={headingRef}>Discover your perfect stay in the heart of Karnali</h1>
           <p className="himalayas" ref={subTextRef}>
-            Karnali Province offers cozy homestays and comfortable hotels, perfect for adventurers, families, and those seeking relaxation.
+            Karnali Province offers cozy homestays and comfortable hotels, perfect for adventurers, families, and those seeking relaxation.
           </p>
         </div>
 
@@ -61,17 +60,18 @@ function Accommodation() {
               <div className="col-md-4 py-2">
                 <div className="card destination-card">
                   <img
-                    src="/karnali-hotel.webp"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnGJEfvN9cAoMasBL0fF75Of3kq4ZhpfbT1A&s"
                     className="card-img-top"
-                    alt="Hotel Karnali"
+                    alt="Hotel Karnali Luxury"
                   />
-                  <div className="card-body">
-                    <h5 className="card-title">Hotel Karnali</h5>
-                    <p className="card-text">
-                      Experience top-notch hospitality with breathtaking mountain
-                      views.
-                    </p>
-                  </div>
+                  <Link className="text-decoration-none" to="/hotel-details">
+                    <div className="card-body">
+                      <h5 className="card-title text-dark">Hotel Karnali Luxury</h5>
+                      <p className="card-text">
+                        Premium stay with luxurious amenities and a rooftop view of the Himalayas.
+                      </p>
+                    </div>
+                  </Link>
                 </div>
               </div>
 
@@ -79,14 +79,14 @@ function Accommodation() {
               <div className="col-md-4 py-2">
                 <div className="card destination-card">
                   <img
-                    src="/rara-resort.jpg"
+                    src="https://storage.googleapis.com/namchey-gcs-asia-east/article/61a750523e437d7a88395a3f/article-61a750523e437d7a88395a3f-1638357050224-1080w.jpeg"
                     className="card-img-top"
-                    alt="Rara Resort"
+                    alt="Rara Haven Resort"
                   />
                   <div className="card-body">
-                    <h5 className="card-title">Rara Resort</h5>
+                    <h5 className="card-title">Rara Haven Resort</h5>
                     <p className="card-text">
-                      Enjoy serene surroundings near the beautiful Rara Lake.
+                      Serene environment close to Rara Lake, perfect for nature lovers.
                     </p>
                   </div>
                 </div>
@@ -96,15 +96,65 @@ function Accommodation() {
               <div className="col-md-4 py-2">
                 <div className="card destination-card">
                   <img
-                    src="/siddhartha-sunny-resort.jpg"
+                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/a6/e3/56/siddhartha-resort-surkhet.jpg?w=1200&h=-1&s=1"
                     className="card-img-top"
-                    alt="Surkhet Inn"
+                    alt="Surkhet Delight Inn"
                   />
                   <div className="card-body">
-                    <h5 className="card-title">Surkhet Inn</h5>
+                    <h5 className="card-title">Surkhet Delight Inn</h5>
                     <p className="card-text">
-                      Perfect blend of comfort and convenience in the heart of
-                      Surkhet.
+                      Your ideal stay in Surkhet with modern comforts and top-rated services.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hotel Card 4 */}
+              <div className="col-md-4 py-2">
+                <div className="card destination-card">
+                  <img
+                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/fa/01/43/hotel-in-chisapani-with.jpg?w=700&h=-1&s=1"
+                    className="card-img-top"
+                    alt="Himalayan Vista Hotel"
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">Himalayan Vista Hotel</h5>
+                    <p className="card-text">
+                      Offering stunning Himalayan views and cozy accommodations for all.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hotel Card 5 */}
+              <div className="col-md-4 py-2">
+                <div className="card destination-card">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGvfnqFHBI7rOlLp9W2SZfXQLt75X1Jqj4kw&s"
+                    className="card-img-top"
+                    alt="Blue Sky Lodge"
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">Blue Sky Lodge</h5>
+                    <p className="card-text">
+                      Affordable comfort with beautiful landscapes and excellent food.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hotel Card 6 */}
+              <div className="col-md-4 py-2">
+                <div className="card destination-card">
+                  <img
+                    src="https://blueskyhotel.com.np/images/blue-sky/hotel.jpg"
+                    className="card-img-top"
+                    alt="Karnali Heritage Inn"
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">Karnali Heritage Inn</h5>
+                    <p className="card-text">
+                      A blend of cultural charm and modern facilities in the heart of Karnali.
                     </p>
                   </div>
                 </div>
